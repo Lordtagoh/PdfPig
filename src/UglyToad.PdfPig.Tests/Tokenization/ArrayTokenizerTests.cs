@@ -35,22 +35,22 @@
             new object[] { "[ <AE>\r\n]", "®" }, 
         };
 
-        [Theory]
-        [MemberData(nameof(SingleElementTestData))]
-        public void SingleElementArray(string s, object dataValue)
-        {
-            var input = StringBytesTestConverter.Convert(s);
+        //[Theory]
+        //[MemberData(nameof(SingleElementTestData))]
+        //public void SingleElementArray(string s, object dataValue)
+        //{
+        //    var input = StringBytesTestConverter.Convert(s);
 
-            var result = tokenizer.TryTokenize(input.First, input.Bytes, out var token);
+        //    var result = tokenizer.TryTokenize(input.First, input.Bytes, out var token);
 
-            Assert.True(result);
+        //    Assert.True(result);
 
-            var array = AssertArrayToken(token);
+        //    var array = AssertArrayToken(token);
 
-            Assert.Equal(1, array.Data.Count);
+        //    Assert.Equal(1, array.Data.Count);
 
-            Assert.Equal(dataValue, ((dynamic)token).Data[0].Data);
-        }
+        //    Assert.Equal(dataValue, (token as dynamic).Data[0].Data);
+        //}
 
         [Theory]
         [InlineData("[]")]

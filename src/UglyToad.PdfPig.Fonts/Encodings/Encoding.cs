@@ -1,7 +1,7 @@
 ﻿namespace UglyToad.PdfPig.Fonts.Encodings
 {
     using System.Collections.Generic;
-    using Tokens;
+    using UglyToad.PdfPig.Tokens;
 
     /// <summary>
     /// Maps character codes to glyph names from a PostScript encoding.
